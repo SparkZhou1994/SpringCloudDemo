@@ -129,5 +129,7 @@
         <module>eureka1</module>
         <module>provider1</module>
         <module>invoker1</module>
+        <module>eureka2</module>
+        <module>provider2</module>
     </modules>
 </project>

@@ -1,10 +1,10 @@
-package spark.provider1.entity;
+package spark.provider2.entity;
 
 /**
  * @ClassName Person
  * @Description TODO
  * @Author Spark
- * @Date 11/28/2018 11:21 AM
+ * @Date 11/28/2018 1:09 PM
  * @Version 1.0
  **/
 public class Person {
