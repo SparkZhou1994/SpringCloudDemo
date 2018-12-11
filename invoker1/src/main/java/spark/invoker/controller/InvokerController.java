@@ -56,8 +56,8 @@ public class InvokerController {
 
     @GetMapping(value = "/router", produces = MediaType.APPLICATION_JSON_VALUE)
     public String router() {
-        RestTemplate restTpl = getRestTemplate();
-        String json = restTpl.getForObject("http://provider/person/1", String.class);
+        RestTemplate restTemplate = getRestTemplate();
+        String json = restTemplate.getForObject("http://provider/person/1", String.class);
         return json;
     }
 }

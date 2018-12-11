@@ -2,6 +2,7 @@ package spark.invoker.config.ribbon;
 
 import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -12,9 +13,13 @@ import org.springframework.context.annotation.Bean;
  * @Version 1.0
  **/
 public class MyConfig {
-    @Bean
+/*    @Bean
     public IRule getRule() {
         return new MyRule();
+    }*/
+    @Bean
+    public IRule getRule() {
+        return new RandomRule();
     }
 
     @Bean

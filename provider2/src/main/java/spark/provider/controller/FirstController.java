@@ -16,7 +16,7 @@ import spark.provider.entity.Person;
 public class FirstController {
     @GetMapping("/person/{personId}")
     public Person findPerson(@PathVariable("personId") Integer personId){
-        Person person = new Person(personId,"Spark",24);
+        Person person = new Person(personId,"Spark",25);
         return person;
     }
 }
