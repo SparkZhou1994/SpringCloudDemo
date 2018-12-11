@@ -3,12 +3,12 @@ server:
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8762/eureka/
+      default-zone: http://eureka2:8762/eureka/
   instance:
-    hostname: localhost
+    hostname: eureka1
   server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 5000
+#   enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 5000
 spring:
   application:
-    name: eureka1
+    name: eureka
