@@ -1,14 +1,12 @@
-package spark.provider.entity;
+package spark.invoker.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @ClassName Person
  * @Description TODO
  * @Author Spark
- * @Date 11/28/2018 1:09 PM
+ * @Date 12/12/2018 3:29 PM
  * @Version 1.0
  **/
 @Data

@@ -13,13 +13,9 @@ import org.springframework.context.annotation.Bean;
  * @Version 1.0
  **/
 public class MyConfig {
-/*    @Bean
-    public IRule getRule() {
-        return new MyRule();
-    }*/
     @Bean
     public IRule getRule() {
-        return new RandomRule();
+        return new MyRule();
     }
 
     @Bean

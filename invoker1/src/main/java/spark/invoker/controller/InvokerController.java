@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import spark.invoker.entity.Person;
+import spark.invoker.service.PersonService;
 
-import java.awt.*;
 import java.util.List;
 
 /**
@@ -27,6 +27,8 @@ import java.util.List;
 public class InvokerController {
     @Autowired
     private DiscoveryClient discoveryClient;
+    @Autowired
+    private PersonService personService;
 
     @Bean
     @LoadBalanced
@@ -56,8 +58,7 @@ public class InvokerController {
 
     @GetMapping(value = "/router", produces = MediaType.APPLICATION_JSON_VALUE)
     public String router() {
-        RestTemplate restTemplate = getRestTemplate();
-        String json = restTemplate.getForObject("http://provider/person/1", String.class);
-        return json;
+        Person person = personService.getPerson(1);
+        return person.toString();
     }
 }
