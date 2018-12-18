@@ -61,4 +61,12 @@ public class InvokerController {
         Person person = personService.getPerson(1);
         return person.toString();
     }
+
+    @GetMapping(value = "/timeout", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String timeout() throws Exception{
+        Thread.sleep(1000);
+        return "timeout";
+    }
+
+
 }

@@ -13,9 +13,12 @@ import spark.invoker.entity.Person;
  * @Date 12/12/2018 3:17 PM
  * @Version 1.0
  **/
-@FeignClient("provider")
+@FeignClient(name = "provider", fallback = PersonServiceFallback.class)
 public interface PersonService {
     @RequestMapping(method = RequestMethod.GET,value = "/person/{personId}")
     Person getPerson(@PathVariable("personId") Integer personId);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/timeout")
+    String timeout();
 
 }

@@ -1,0 +1,6 @@
+server:
+  port: 8080
+zuul:
+  routes:
+    invoker1:
+      url: http://47.101.48.26:9000
