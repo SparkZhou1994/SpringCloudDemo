@@ -1,2 +1,15 @@
 server:
   port: 9001
+spring:
+  application:
+    name: hystrixmonitor
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/,http://eureka:8762/eureka/
+    registry-fetch-interval-seconds: 30
+logging:
+  level:
+    com.netflix: debug
