@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import spark.invoker.entity.Person;
+import spark.invoker.service.impl.PersonServiceFallback;
 
 /**
  * @ClassName PersonService

@@ -7,10 +7,13 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import spark.invoker.entity.Person;
+import spark.invoker.service.MessageService;
 import spark.invoker.service.PersonService;
 
 import java.util.List;
@@ -29,7 +32,8 @@ public class InvokerController {
     private DiscoveryClient discoveryClient;
     @Autowired
     private PersonService personService;
-
+    @Autowired
+    private MessageService messageService;
     @Bean
     @LoadBalanced
     public RestTemplate getRestTemplate() {
@@ -68,5 +72,9 @@ public class InvokerController {
         return "timeout";
     }
 
-
+    @GetMapping("/message/send")
+    public void sendMessage() {
+        Message message = MessageBuilder.withPayload("Hello,Spring Cloud Rabbit".getBytes()).build();
+        messageService.sendMessage().send(message);
+    }
 }

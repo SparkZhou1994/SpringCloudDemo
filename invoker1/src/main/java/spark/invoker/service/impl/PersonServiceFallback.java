@@ -1,7 +1,8 @@
-package spark.invoker.service;
+package spark.invoker.service.impl;
 
 import org.springframework.stereotype.Component;
 import spark.invoker.entity.Person;
+import spark.invoker.service.PersonService;
 
 /**
  * @ClassName PersonServiceFallback
