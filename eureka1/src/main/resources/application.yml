@@ -4,7 +4,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka2:8762/eureka/
-    register-with-eureka: true
+    register-with-eureka: false
   instance:
     hostname: eureka1
   server:
@@ -13,3 +13,11 @@ eureka:
 spring:
   application:
     name: eureka
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SparkZhou1994/SpringCloudDemo/
+management:
+  security:
+    enabled: false
