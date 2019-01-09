@@ -1,0 +1,30 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: invoker
+  cloud:
+    loadbalancer:
+      retry: false
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/,http://eureka:8762/eureka/
+    registry-fetch-interval-seconds: 30
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    PersonService#timeout():
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500
+      circuitBreaker:
+        requestVolumeThreshold: 3
+logging:
+  level:
+    com.netflix: debug
