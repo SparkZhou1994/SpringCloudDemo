@@ -131,5 +131,6 @@
         <module>provider2</module>
         <module>hystrixmonitor</module>
         <module>gateway</module>
+        <module>configcenter</module>
     </modules>
 </project>
