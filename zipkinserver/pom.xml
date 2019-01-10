@@ -4,17 +4,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>spark</groupId>
-    <artifactId>eureka1</artifactId>
+    <artifactId>zipkinserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>eureka1</name>
+    <name>zipkinserver</name>
     <description></description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-            <version>1.3.1.RELEASE</version>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -23,5 +27,4 @@
         <artifactId>springclouddemo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    
 </project>
